@@ -16,11 +16,11 @@ class PelangganSeeder extends Seeder
     {
         $items = [
             [
-                'nama'   => 'Damas Amirul Karim',
+                'nama'   => 'Pelanggan1',
                 'kontak' => '081575768529',
             ],
             [
-                'nama'   => 'Naila Unlia Kurniasari',
+                'nama'   => 'Pelangga2',
                 'kontak' => '08123456789',
             ],
         ];
