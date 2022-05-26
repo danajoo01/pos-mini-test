@@ -18,29 +18,29 @@ class ProdukSeeder extends Seeder
     {
         $items = [
             [
-                'kategori'  => 'Paket Desktop',
-                'nama'      => 'Majoo Desktop',
+                'kategori'  => 'Paket Advance',
+                'nama'      => 'Majoo Advance',
                 'harga'     => 11600000,
                 'deskripsi' => 'Lorem ipsum dolor sit amet, an luptatum intellegam nec, at tractatos omittantur duo. Sea ea mutat integre. At labore nonumes mea. Doming possit postulant ad his, vix te legere legimus offendit, ei vero eripuit abhorreant usu. Rebum animal periculis ad has.',
                 'gambar'    => 'paket-advance.png',
             ],
             [
-                'kategori'  => 'Paket Starter Lite',
-                'nama'      => 'Majoo Lifestyle',
+                'kategori'  => 'Paket Desktop',
+                'nama'      => 'Majoo Desktop',
                 'harga'     => 3550000,
                 'deskripsi' => 'Lorem ipsum dolor sit amet, an luptatum intellegam nec, at tractatos omittantur duo. Sea ea mutat integre. At labore nonumes mea. Doming possit postulant ad his, vix te legere legimus offendit, ei vero eripuit abhorreant usu. Rebum animal periculis ad has.',
                 'gambar'    => 'paket-desktop.png',
             ],
             [
-                'kategori'  => 'Paket Advance Galaxy',
-                'nama'      => 'Majoo Advance',
+                'kategori'  => 'Paket Lifestyle',
+                'nama'      => 'Majoo Lifestyle',
                 'harga'     => 5850000,
                 'deskripsi' => 'Lorem ipsum dolor sit amet, an luptatum intellegam nec, at tractatos omittantur duo. Sea ea mutat integre. At labore nonumes mea. Doming possit postulant ad his, vix te legere legimus offendit, ei vero eripuit abhorreant usu. Rebum animal periculis ad has.',
                 'gambar'    => 'paket-lifestyle.png',
             ],
             [
-                'kategori'  => 'Paket Starter Sprinter',
-                'nama'      => 'Majoo Pro',
+                'kategori'  => 'Paket Repo',
+                'nama'      => 'Majoo Repo',
                 'harga'     => 25500000,
                 'deskripsi' => 'Lorem ipsum dolor sit amet, an luptatum intellegam nec, at tractatos omittantur duo. Sea ea mutat integre. At labore nonumes mea. Doming possit postulant ad his, vix te legere legimus offendit, ei vero eripuit abhorreant usu. Rebum animal periculis ad has.',
                 'gambar'    => 'paket_repo.png',
