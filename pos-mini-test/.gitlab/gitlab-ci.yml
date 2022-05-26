@@ -1,0 +1,37 @@
+stages:
+  - deploy_dev
+  - deploy_prod
+
+image: alpine
+deploy_dev :
+  before_script:
+    - apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$DEV_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H "$DEV_SERVER" > ~/.ssh/known_hosts
+  stage: deploy_dev
+  only:
+    - development
+  script:
+    - rsync -avz /builds/danajoo/hobikoe-website/ admin@$DEV_SERVER:~/folder_name/
+    - ssh admin@$DEV_SERVER 'cd ~/folder_name/ && composer install'
+    - ssh admin@$DEV_SERVER 'cd ~/folder_name/ && composer dump-autoload'
+    - ssh admin@$DEV_SERVER 'cd ~/folder_name/ && php artisan config:clear'
+deploy_prod :
+  before_script:
+    - apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$DEV_PROD" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H "$PROD_HOST" > ~/.ssh/known_hosts
+  stage: deploy_prod
+  only:
+    - master
+  script:
+    - rsync -avz /builds/danajoo/folder_name/ admin@$PROD_HOST:~/folder_name/
+    - ssh admin@$PROD_HOST 'cd ~/folder_name/ && composer install'
+    - ssh admin@$PROD_HOST 'cd ~/folder_name/ && composer dump-autoload'
+    - ssh admin@$PROD_HOST 'cd ~/folder_name/ && php artisan config:clear'
